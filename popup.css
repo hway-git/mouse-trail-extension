@@ -1,0 +1,137 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+    width: 280px;
+    color: #1c1c1e;
+  }
+  
+  .container {
+    padding: 16px;
+  }
+  
+  .section {
+    padding: 12px 0;
+    border-bottom: 1px solid #e5e5ea;
+  }
+  
+  .section-title {
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 12px;
+    color: #636366;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  .color-options {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+  
+  .color-option {
+    width: 24px;
+    height: 24px;
+    border-radius: 6px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: transform 0.2s;
+  }
+  
+  .color-option:hover {
+    transform: scale(1.1);
+  }
+  
+  .color-option.selected {
+    border-color: #007aff;
+    transform: scale(1.1);
+  }
+  
+  .slider-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .slider-container input[type="range"] {
+    flex: 1;
+    height: 4px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: #e5e5ea;
+    border-radius: 2px;
+  }
+  
+  .slider-container input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #007aff;
+    cursor: pointer;
+  }
+  
+  .slider-value {
+    font-size: 14px;
+    min-width: 20px;
+    text-align: right;
+  }
+  
+  .toggle-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .toggle-label {
+    font-size: 14px;
+    font-weight: 500;
+  }
+  
+  /* iOS风格开关 */
+  .toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 26px;
+  }
+  
+  .toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .toggle-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #e5e5ea;
+    transition: .4s;
+    border-radius: 13px;
+  }
+  
+  .toggle-slider:before {
+    position: absolute;
+    content: "";
+    height: 22px;
+    width: 22px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+  }
+  
+  input:checked + .toggle-slider {
+    background-color: #34c759;
+  }
+  
+  input:checked + .toggle-slider:before {
+    transform: translateX(18px);
+  }

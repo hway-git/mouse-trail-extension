@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container" style="visibility: hidden;">
+    <div class="section">
+      <div class="section-title">轨迹颜色</div>
+      <div class="color-options">
+        <div class="color-option" style="background-color: #007aff;" data-color="#007aff"></div>
+        <div class="color-option" style="background-color: #34c759;" data-color="#34c759"></div>
+        <div class="color-option" style="background-color: #ff9500;" data-color="#ff9500"></div>
+        <div class="color-option" style="background-color: #ff2d55;" data-color="#ff2d55"></div>
+        <div class="color-option" style="background-color: #af52de;" data-color="#af52de"></div>
+        <input type="color" id="color" value="#ff0000" list="color-presets" hidden>
+      </div>
+    </div>
+    
+    <div class="section">
+      <div class="section-title">轨迹粗细</div>
+      <div class="slider-container">
+        <input type="range" id="thickness" min="1" max="20" value="8">
+        <span class="slider-value" id="thickness-value">8</span>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">轨迹平滑度</div>
+      <div class="slider-container">
+          <input type="range" id="smoothness" min="1" max="30" value="8" />
+          <span class="slider-value" id="smoothness-value">8</span>
+      </div>
+    </div>
+    
+    <div class="section" style="border-bottom: none;">
+      <div class="toggle-container">
+        <span class="toggle-label">启用鼠标轨迹</span>
+        <label class="toggle-switch">
+          <input type="checkbox" id="enabled" checked>
+          <span class="toggle-slider"></span>
+        </label>
+      </div>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

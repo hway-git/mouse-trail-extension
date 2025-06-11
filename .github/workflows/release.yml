@@ -1,0 +1,28 @@
+name: Build and Release Extension
+
+on:
+  push:
+    tags:
+      - 'v*'  # 仅在打 tag 时触发，例如 v1.0.0
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up zip file
+        run: |
+          mkdir dist
+          zip -r dist/mouse-trail-extension.zip . -x "*.git*" -x "*.github*" -x "dist/*" -x "*.DS_Store"
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.ref_name }}
+          name: Release ${{ github.ref_name }}
+          files: dist/mouse-trail-extension.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
